@@ -11,6 +11,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+
+        $tag = new \ App \ Tag ();
+        $tag -> name = ' Tutorial ';
+        $tag -> save ();
+        $tag = new \ App \ Tag ();
+        $tag -> name = ' Industry News ';
+        $tag -> save ();
+
+        $this -> call ( PostTableSeeder :: class );
+        $this -> call ( TagTableSeeder :: class );
+
     }
 }
